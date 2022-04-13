@@ -1,0 +1,453 @@
+[NbConvertApp] WARNING | Config option `kernel_spec_manager_class` not recognized by `NbConvertApp`.
+[NbConvertApp] Converting notebook CLUST-VAEDA-hyperopt.ipynb to notebook
+2022-01-26 22:09:08.790740: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-01-26 22:09:08.790796: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-01-26 22:11:51.666882: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2022-01-26 22:11:51.667289: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-01-26 22:11:51.667314: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2022-01-26 22:11:51.667367: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (c049b509c347): /proc/driver/nvidia/version does not exist
+2022-01-26 22:11:51.669510: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2022-01-26 22:11:52.117388: W tensorflow/python/util/util.cc:348] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.
+2022-01-26 22:11:52.299196: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:116] None of the MLIR optimization passes are enabled (registered 2)
+2022-01-26 22:11:52.299833: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 3199795000 Hz
+Traceback (most recent call last):
+  File "/home/hannah/miniconda3/envs/newenv/bin/jupyter-nbconvert", line 11, in <module>
+    sys.exit(main())
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/jupyter_core/application.py", line 254, in launch_instance
+    return super(JupyterApp, cls).launch_instance(argv=argv, **kwargs)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/traitlets/config/application.py", line 846, in launch_instance
+    app.start()
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbconvert/nbconvertapp.py", line 346, in start
+    self.convert_notebooks()
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbconvert/nbconvertapp.py", line 518, in convert_notebooks
+    self.convert_single_notebook(notebook_filename)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbconvert/nbconvertapp.py", line 483, in convert_single_notebook
+    output, resources = self.export_single_notebook(notebook_filename, resources, input_buffer=input_buffer)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbconvert/nbconvertapp.py", line 412, in export_single_notebook
+    output, resources = self.exporter.from_filename(notebook_filename, resources=resources)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbconvert/exporters/exporter.py", line 181, in from_filename
+    return self.from_file(f, resources=resources, **kw)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbconvert/exporters/exporter.py", line 199, in from_file
+    return self.from_notebook_node(nbformat.read(file_stream, as_version=4), resources=resources, **kw)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbconvert/exporters/notebook.py", line 32, in from_notebook_node
+    nb_copy, resources = super().from_notebook_node(nb, resources, **kw)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbconvert/exporters/exporter.py", line 143, in from_notebook_node
+    nb_copy, resources = self._preprocess(nb_copy, resources)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbconvert/exporters/exporter.py", line 318, in _preprocess
+    nbc, resc = preprocessor(nbc, resc)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbconvert/preprocessors/base.py", line 47, in __call__
+    return self.preprocess(nb, resources)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbconvert/preprocessors/execute.py", line 84, in preprocess
+    self.preprocess_cell(cell, resources, index)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbconvert/preprocessors/execute.py", line 105, in preprocess_cell
+    cell = self.execute_cell(cell, index, store_history=True)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbclient/client.py", line 857, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+start = time.time()
+for file in files:
+    
+    data_name = file[:-19]
+    print(data_name) 
+    
+    save_dir = '../hyperparam_search/' + data_name + '/'
+    if not os.path.exists(save_dir):
+        os.makedirs(save_dir)
+    print(save_dir)
+
+    real_path = '../data/mtx_files/' + data_name + '.mtx'
+    ano_path  = '../data/mtx_files/' + data_name + '_anno.csv'
+    
+    print('loading in real mtx')
+    dat_real = mmread(real_path)
+    Xr = scs.csr_matrix(dat_real).toarray().T
+    
+    #- READ IN BARCODE ANNOTATIONS
+    ano = pd.read_csv(ano_path)
+    true = pd.factorize(ano.x)[0]
+    labels = ano.x
+    if (labels[0]=='doublet'):
+        tmp = true + 3
+        tmp[tmp==3] = 1
+        tmp[tmp==4] = 0
+        true = tmp
+
+    #######################################################
+    ######################### SIM #########################
+    #######################################################
+    npz_sim_path  = save_dir + 'sim_doubs.npz'
+    sim_ind_path  = save_dir + 'sim_ind.npy'
+    
+    npz_sim  = pl.Path(npz_sim_path)
+    
+    if (npz_sim.exists() & use_old):
+        print('loading in sim npz')
+        
+        dat_sim = scs.load_npz(npz_sim)
+        sim_ind = np.load(sim_ind_path)
+        ind1 = sim_ind[0,:]
+        ind2 = sim_ind[1,:]
+        Xs = scs.csr_matrix(dat_sim).toarray()
+        
+    else:
+        print('generating new sim npz')
+        
+        Xs, ind1, ind2 = sim_inflate(Xr)        
+        dat_sim = scs.csr_matrix(Xs) 
+        
+        if(len(save_dir)>0):
+            scs.save_npz(npz_sim_path,dat_sim) 
+            np.save(sim_ind_path, np.vstack([ind1,ind2]))
+
+    Y = np.concatenate([np.zeros(Xr.shape[0]), np.ones(Xs.shape[0])])
+    X = np.vstack([Xr,Xs])
+    
+    X_keep1 = X
+    Y_keep1 = Y
+    true_keep1 = true
+    labels_keep1 = labels
+    
+    for gene_thresh in gene_theshes:
+        
+        X = X_keep1
+        
+        #Filter genes
+        thresh = np.floor(X.shape[0]) * gene_thresh
+        tmp    = np.sum((X>0), axis=0)>thresh
+        X      = X[:,tmp]
+        
+        X_keep2 = X
+
+        #- HVGs
+        for num_hvgs in hvg_nums:
+            
+            X = X_keep2
+            
+            var = np.var(X, axis=0)
+            np.random.seed(3900362577)
+            hvgs = np.argpartition(var, -num_hvgs)[-num_hvgs:]  
+
+            X = X[:,hvgs]
+
+            #######################################################
+            ######################### KNN #########################
+            #######################################################
+
+            #HYPERPARAMS
+            neighbors = int(np.sqrt(X.shape[0]))
+
+            #SCALING
+            temp_X = np.log2(X+1)
+            np.random.seed(42)
+            scaler = StandardScaler().fit(temp_X.T)
+            np.random.seed(42)
+            temp_X = scaler.transform(temp_X.T).T
+
+            X_keep3 = X
+            temp_X_keep1 = temp_X
+            
+            #KNN
+            for pca_comp in pca_comps:
+                
+                X = X_keep3
+                temp_X = temp_X_keep1
+                Y = Y_keep1
+                
+                knn_file = save_dir + '/PcaComp' + str(pca_comp) + '/NumHvgs' + str(num_hvgs) + '/GeneTresh' + str(gene_thresh) + '/'
+                if not os.path.exists(knn_file):
+                    os.makedirs(knn_file)
+                
+                if(pl.Path(knn_file + 'knn_feature.npy').exists() & use_old):
+                    knn_feature = np.load(knn_file + 'knn_feature.npy')
+                else:
+                    np.random.seed(42)
+                    pca = PCA(n_components=pca_comp)
+                    pca_proj = pca.fit_transform(temp_X)
+                    del(temp_X)
+
+                    np.random.seed(42)
+                    knn = NearestNeighbors(n_neighbors=neighbors)
+                    knn.fit(pca_proj,Y)
+                    graph = knn.kneighbors_graph(pca_proj)
+                    knn_feature = np.squeeze(np.array(np.sum(graph[:,Y==1], axis=1) / neighbors)) #sum across rows
+                    
+                    if(len(save_dir)>0):
+                        np.save(knn_file + 'knn_feature.npy', knn_feature)
+
+                knn_feature_keep1 = knn_feature
+                
+                for quant in quants:
+                    
+                    knn_feature = knn_feature_keep1
+                    
+                    #estimate true faction of doublets 
+                    quantile = np.quantile(knn_feature[Y==1], quant)
+                    num = np.sum(knn_feature[Y==0]>=quantile)
+                    min_num = int(np.round((sum(Y==0) *0.05)))
+                    num = np.max([min_num, num])
+                    estimated_doub_frac = num / sum(Y==0)
+                    estimated_doub_num = num
+                    print('estimated number of doublets:', estimated_doub_num)
+
+                    prob = knn_feature[Y==1] / np.sum(knn_feature[Y==1])
+                    np.random.seed(seeds[0])
+                    ind = np.random.choice(np.arange(sum(Y==1)), size=num, p=prob, replace=False)
+
+                    #ind = sum(Y==0) + ind
+
+                    #downsample the simulated doublets
+                    enc_ind = np.concatenate([np.arange(sum(Y==0)), (sum(Y==0) + ind)])
+                    X = X[enc_ind,:]
+                    Y = Y[enc_ind]
+                    knn_feature = knn_feature[enc_ind]
+
+                    #re-scale
+                    X = np.log2(X+1)
+                    np.random.seed(42)
+                    scaler = StandardScaler().fit(X.T)
+                    np.random.seed(42)
+                    X = scaler.transform(X.T).T
+
+
+                    #######################################################
+                    ####################### CLUSTER #######################
+                    #######################################################
+                    
+                    clust_file = save_dir + '/PcaComp' + str(pca_comp) + '/NumHvgs' + str(num_hvgs) + '/GeneTresh' + str(gene_thresh) + \
+                                '/Quant' + str(quant) + '/'
+                    if not os.path.exists(clust_file):
+                        os.makedirs(clust_file)
+
+                    if(pl.Path(clust_file + 'cluster.npy').exists() & use_old):
+                        clust = np.load(clust_file + 'cluster.npy')
+                    else:
+                        if(X.shape[0]>=1000):
+                            clust = fast_cluster(X, comp=pca_comp)
+                        else:
+                            clust = cluster(X, comp=pca_comp)
+
+                        if(len(save_dir)>0):
+                            np.save(clust_file + 'cluster.npy', clust)
+
+                        
+                    X_keep4 = X
+                    Y_keep2 = Y
+                    knn_feature_keep2 = knn_feature
+                    clust_keep1 = clust
+                        
+                        
+                    for remove_homos in homos_rems:
+                        
+                        X = X_keep4
+                        Y = Y_keep2
+                        knn_feature = knn_feature_keep2
+                        clust = clust_keep1
+                        
+                        if(remove_homos):
+                            c = clust[Y==0]
+
+                            hetero_ind = c[ind1] != c[ind2]
+                            hetero_ind = hetero_ind[ind] #becasue down sampled
+                            print('number of homos:', sum((hetero_ind*-1)+1))
+
+                            hetero_ind = np.concatenate([np.full(sum(Y==0), True), hetero_ind])
+
+                            X = X[hetero_ind,:]
+                            Y = Y[hetero_ind]
+                            clust = clust[hetero_ind]
+                            knn_feature = knn_feature[hetero_ind]
+
+
+                        
+                        #######################################################
+                        ######################### VAE #########################
+                        #######################################################
+                        #X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.1, random_state=12345)
+                        X_train, X_test, clust_train, clust_test = train_test_split(X, clust, test_size=0.1, random_state=12345)
+                        clust_train = tf.one_hot(clust_train, depth=clust.max()+1)
+                        clust_test = tf.one_hot(clust_test, depth=clust.max()+1)
+
+
+                        X_keep5 = X
+                        Y_keep3 = Y
+                        knn_feature_keep3 = knn_feature
+                        clust_keep2 = clust
+                        
+                        for enc_sze in enc_szes:
+                            for pat_vae in pat_vaes:
+                                for rate in rates:
+                                    for clust_weight in clust_weights:
+                                        
+                                        X = X_keep5
+                                        Y = Y_keep3
+                                        knn_feature = knn_feature_keep3
+                                        clust = clust_keep2
+                                        
+                                        #VAE
+                                        ngens = X.shape[1]
+
+                                        
+                                        
+                                        vae_file = save_dir + '/PcaComp' + str(pca_comp) + '/NumHvgs' + str(num_hvgs) + '/GeneTresh' + str(gene_thresh) + \
+                                                    '/Quant' + str(quant) + '/RemoveHomos' + str(remove_homos) + \
+                                                    '/EncSze' + str(enc_sze) + '/PatVae' + str(pat_vae) + '/Rate' + str(rate) + '/ClustWeight' + str(clust_weight) + '/'
+                                        if not os.path.exists(vae_file):
+                                            os.makedirs(vae_file)
+
+                                        if(pl.Path(vae_file + 'embedding.npy').exists() & use_old):
+                                            encoding = np.load(vae_file + 'embedding.npy')
+                                        else:
+                                            print('generating new VAE encoding')
+                                            
+                                            tf.random.set_seed(seeds[1])
+                                            vae = define_clust_vae(enc_sze, ngens, clust.max()+1, clust_weight=clust_weight)
+
+                                            callback = tf.keras.callbacks.EarlyStopping(monitor='val_loss',
+                                                                                        mode = 'min',
+                                                                                        min_delta=0, 
+                                                                                        patience=pat_vae, 
+                                                                                        verbose=True, 
+                                                                                        restore_best_weights=False)
+
+                                            def scheduler(epoch, lr):
+                                                if epoch < 3:
+                                                    return lr
+                                                else:
+                                                    return lr * tf.math.exp(rate)
+
+                                            callback2 = tf.keras.callbacks.LearningRateScheduler(scheduler)
+
+                                            #tf.config.optimizer.set_jit(True)
+                                            hist = vae.fit(x=[X_train],
+                                                           y=[X_train, clust_train],
+                                                           validation_data=([X_test], [X_test, clust_test]),
+                                                           epochs=1000, 
+                                                           use_multiprocessing=True,
+                                                           callbacks=[callback, callback2])
+
+                                            encoder = vae.get_layer('encoder')
+                                            tf.random.set_seed(seeds[2])
+                                            encoding = np.array(tf.convert_to_tensor(encoder(X)))
+
+                                            if(len(save_dir)>0):
+                                                np.save(vae_file + 'embedding.npy', encoding)
+
+
+                                    #######################################################
+                                    ######################### PU ##########################
+                                    #######################################################
+                                    encoding_keep = encoding
+                                    encoding = np.vstack([knn_feature,encoding.T]).T
+
+                                    #PU BAGGING
+                                    U = encoding[Y==0,:]
+                                    P = encoding[Y==1,:]
+
+                                    for k_mult in k_mults:
+                                        num_cells = P.shape[0]*k_mult
+                                        k = int(U.shape[0] / num_cells)
+                                        if(k<2):
+                                            k=2
+
+                                        for max_ep in max_eps:
+                                            hist = epoch_PU2(U, P, k, 1, max_ep, seeds=seeds[3:])
+                                            
+                                            for wind in winds:
+                                                for ss in Ss:
+                                                    y=np.log(hist.history['loss'])
+                                                    x=np.arange(len(y))
+                                                    yhat = savgol_filter(y, window_length=wind, polyorder=1) 
+
+                                                    y=yhat
+                                                    x=np.arange(len(y))
+
+                                                    kneedle = KneeLocator(x, y, S=ss, curve='convex', direction='decreasing')
+
+                                                    knee = kneedle.knee
+
+                                                    if knee==None:
+                                                        knee = 250
+
+                                                    elif(num < 500):#add epochs if ther aren't enough cells
+                                                        print('added 100')
+                                                        knee = knee+100
+
+                                                    elif knee<20:
+                                                        knee = 20
+
+                                                    elif knee>250:
+                                                        knee = 250
+
+                                                    print('KNEE:', knee)   
+
+                                                    ##new v
+                                                    #tf.config.optimizer.set_jit(True)
+                                                    preds, preds_on_P, hists, _, _, _ = PU(U, P, k, 1, knee, seeds=seeds[3:])
+                                                    ##new ^
+
+                                                    PU_file = save_dir + '/PcaComp' + str(pca_comp) + '/NumHvgs' + str(num_hvgs) + \
+                                                        '/GeneTresh' + str(gene_thresh) + '/Quant' + str(quant) + '/RemoveHomos' + \
+                                                        str(remove_homos) +'/EncSze' + str(enc_sze) + '/PatVae' + str(pat_vae) + \
+                                                        '/Rate' + str(rate) + '/ClustWeight' + str(clust_weight) + '/Kmult' + \
+                                                        str(k_mult) + '/MaxEps' + str(max_ep) + '/Wind' + str(wind) + '/S' + str(ss) + '/'
+                                                    
+                                                    if not os.path.exists(PU_file):
+                                                        os.makedirs(PU_file)
+                                            
+                                                    if(len(save_dir)>0):
+                                                        np.save(PU_file + 'scores.npy', preds)
+                                                        np.save(PU_file + 'scores_on_sim.npy', preds_on_P)
+
+                                                    doub_call_ind = np.argsort(preds)[(-1*estimated_doub_num):]
+                                                    calls = np.full(len(preds), 'singlet')
+                                                    calls[doub_call_ind] = 'doublet'
+                                                    if(len(save_dir)>0):
+                                                        print('saving calls')
+                                                        np.save(PU_file + 'doublet_calls.npy', calls)
+                                                        
+                                                    #PR and ROC curves
+                                                    res = get_dbl_metrics(true, preds)
+                                                    plt.show()
+                                                    plt.close()
+
+                                                    #save AUCs
+                                                    hm_pr = pd.DataFrame(np.array(res).T, index=['AUROC', 'AUPRC', 'AP']).T
+                                                    if(len(save_dir)>0):
+                                                        hm_pr.to_csv(PU_file + 'results.csv') 
+                                                        
+                                                    other_info = pd.DataFrame({'knee':[knee], 'estimated_doub_num':[estimated_doub_num], \
+                                                                              'PcaComp': [pca_comp], 'NumHvgs': [num_hvgs], \
+                                                                              'GeneTresh':[gene_thresh], 'Quant': [quant], 'RemoveHomos': \
+                                                                              [remove_homos],'EncSze': [enc_sze], 'PatVae': [pat_vae], \
+                                                                              'Rate': [rate], 'ClustWeight': [clust_weight], 'Kmult': \
+                                                                              [k_mult], 'MaxEps': [max_ep], 'Wind': [wind], 'S': [ss]})
+                                                    if(len(save_dir)>0):
+                                                        other_info.to_csv(PU_file + 'other.csv') 
+                                                        
+                                                        
+                                                        
+                                                        
+print('TIME:',time.time()-start)
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mIndexError[0m                                Traceback (most recent call last)
+[0;32m/tmp/ipykernel_24368/4108076171.py[0m in [0;36m<module>[0;34m[0m
+[1;32m    136[0m [0;34m[0m[0m
+[1;32m    137[0m                     [0;31m#estimate true faction of doublets[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 138[0;31m                     [0mquantile[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0mquantile[0m[0;34m([0m[0mknn_feature[0m[0;34m[[0m[0mY[0m[0;34m==[0m[0;36m1[0m[0;34m][0m[0;34m,[0m [0mquant[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    139[0m                     [0mnum[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0msum[0m[0;34m([0m[0mknn_feature[0m[0;34m[[0m[0mY[0m[0;34m==[0m[0;36m0[0m[0;34m][0m[0;34m>=[0m[0mquantile[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    140[0m                     [0mmin_num[0m [0;34m=[0m [0mint[0m[0;34m([0m[0mnp[0m[0;34m.[0m[0mround[0m[0;34m([0m[0;34m([0m[0msum[0m[0;34m([0m[0mY[0m[0;34m==[0m[0;36m0[0m[0;34m)[0m [0;34m*[0m[0;36m0.05[0m[0;34m)[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mIndexError[0m: boolean index did not match indexed array along dimension 0; dimension is 25640 but corresponding boolean dimension is 13747
+IndexError: boolean index did not match indexed array along dimension 0; dimension is 25640 but corresponding boolean dimension is 13747
+

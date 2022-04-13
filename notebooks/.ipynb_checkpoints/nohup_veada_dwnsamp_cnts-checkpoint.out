@@ -1,0 +1,182 @@
+[NbConvertApp] WARNING | Config option `kernel_spec_manager_class` not recognized by `NbConvertApp`.
+[NbConvertApp] Converting notebook CLUST-VAEDA-downsample_counts.ipynb to notebook
+2022-02-17 15:51:35.743695: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-02-17 15:51:35.743748: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-02-17 15:54:57.177250: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2022-02-17 15:54:57.177567: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-02-17 15:54:57.177585: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2022-02-17 15:54:57.177628: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (c049b509c347): /proc/driver/nvidia/version does not exist
+2022-02-17 15:54:57.180112: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2022-02-17 15:54:57.782266: W tensorflow/python/util/util.cc:348] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.
+2022-02-17 15:54:58.128988: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:116] None of the MLIR optimization passes are enabled (registered 2)
+2022-02-17 15:54:58.129555: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 3199795000 Hz
+Traceback (most recent call last):
+  File "/home/hannah/miniconda3/envs/newenv/bin/jupyter-nbconvert", line 11, in <module>
+    sys.exit(main())
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/jupyter_core/application.py", line 254, in launch_instance
+    return super(JupyterApp, cls).launch_instance(argv=argv, **kwargs)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/traitlets/config/application.py", line 846, in launch_instance
+    app.start()
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbconvert/nbconvertapp.py", line 346, in start
+    self.convert_notebooks()
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbconvert/nbconvertapp.py", line 518, in convert_notebooks
+    self.convert_single_notebook(notebook_filename)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbconvert/nbconvertapp.py", line 483, in convert_single_notebook
+    output, resources = self.export_single_notebook(notebook_filename, resources, input_buffer=input_buffer)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbconvert/nbconvertapp.py", line 412, in export_single_notebook
+    output, resources = self.exporter.from_filename(notebook_filename, resources=resources)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbconvert/exporters/exporter.py", line 181, in from_filename
+    return self.from_file(f, resources=resources, **kw)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbconvert/exporters/exporter.py", line 199, in from_file
+    return self.from_notebook_node(nbformat.read(file_stream, as_version=4), resources=resources, **kw)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbconvert/exporters/notebook.py", line 32, in from_notebook_node
+    nb_copy, resources = super().from_notebook_node(nb, resources, **kw)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbconvert/exporters/exporter.py", line 143, in from_notebook_node
+    nb_copy, resources = self._preprocess(nb_copy, resources)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbconvert/exporters/exporter.py", line 318, in _preprocess
+    nbc, resc = preprocessor(nbc, resc)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbconvert/preprocessors/base.py", line 47, in __call__
+    return self.preprocess(nb, resources)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbconvert/preprocessors/execute.py", line 84, in preprocess
+    self.preprocess_cell(cell, resources, index)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbconvert/preprocessors/execute.py", line 105, in preprocess_cell
+    cell = self.execute_cell(cell, index, store_history=True)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbclient/client.py", line 857, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/home/hannah/miniconda3/envs/newenv/lib/python3.8/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+for file in files:
+
+    data_name = file[:-19]
+    print(data_name) 
+
+
+    real_path = '../data/mtx_files/' + data_name + '.mtx'
+    ano_path  = '../data/mtx_files/' + data_name + '_anno.csv'
+
+    dat_real = mmread(real_path)
+    Xr_keep = scs.csr_matrix(dat_real).toarray().T
+    
+    #- READ IN BARCODE ANNOTATIONS
+    ano = pd.read_csv(ano_path)
+    true = pd.factorize(ano.x)[0]
+    labels = ano.x
+    if (labels[0]=='doublet'):
+        tmp = true + 3
+        tmp[tmp==3] = 1
+        tmp[tmp==4] = 0
+        true = tmp
+        
+    true_keep = true
+    labels_keep = labels
+        
+    for frac in fracs:
+        for i in reps:
+
+            data_path = '../results_PU/downsample_counts/data'
+            save_path = '../results_PU/downsample_counts/vaeda'
+            if not os.path.exists(save_path):
+                os.makedirs(save_path)
+            save_path = save_path + '/' + data_name + '_frac' + str(frac) + '_rep' + str(i) + '_'
+            print(save_path)
+            
+            data_path = data_path + '/' + data_name + '_frac' + str(frac) + '_rep' + str(i) + '_'
+
+            ############################################################
+            ####################### DOWN SAMPLE ########################
+            ############################################################
+            if(pl.Path(data_path + 'X.mtx').exists()):
+                
+                Xr = mmread(data_path + 'X.mtx')
+                Xr = scs.csr_matrix(Xr).toarray()
+                
+                ############################################################
+                ############################ PU ############################
+                ############################################################
+
+                preds, preds_on_P, calls, encoding, knn_features = vaeda(Xr, save_dir=save_path, use_old=True, pca_comp=30, clust_weight=20000)
+
+                true = np.concatenate([true_keep, np.full(len(preds_on_P),2)])
+                labels = np.concatenate([labels_keep, np.full(len(preds_on_P),'simulated')])
+
+                #RESULTS
+                preds_sing = preds[true[true<2]==0]
+                preds_doub_test = preds[true[true<2]==1]
+                preds_doub_train = preds_on_P
+                labs = ['singlet', 'actual doublet', 'simulated doublet']
+                cols = np.concatenate([preds, preds_on_P])
+
+                #SAVE SCORES
+                tmp1 = np.zeros((len(preds), 3))
+                df = pd.DataFrame(tmp1, columns=['ano', 'doublet_scores', 'predicted_doublets'])
+                df.ano = true_keep
+                df.doublet_scores = preds
+                df.predicted_doublets = calls
+                if(save):
+                    df.to_csv(save_path + 'vaeda_scores.csv') 
+
+                #PR and ROC curves
+                plt.figure(4)
+                res = get_dbl_metrics(true[true<2], preds)
+                plt.show()
+                plt.close()
+
+                #save AUCs
+                hm_pr = pd.DataFrame(np.array(res).T, index=['AUROC', 'AUPRC', 'AP']).T
+                if(save):
+                    hm_pr.to_csv(save_path + 'scores_ROC_PR_area_ALL.csv') 
+                
+            else:
+                print('******************************************************************')
+                print('DOES NOT EXIST')
+                print(frac)
+                print(i)
+                print(data_name)
+                print('******************************************************************')
+
+
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+[0;32m/tmp/ipykernel_24311/1077293459.py[0m in [0;36m<module>[0;34m[0m
+[1;32m     48[0m                 [0;31m############################################################[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     49[0m [0;34m[0m[0m
+[0;32m---> 50[0;31m                 [0mpreds[0m[0;34m,[0m [0mpreds_on_P[0m[0;34m,[0m [0mcalls[0m[0;34m,[0m [0mencoding[0m[0;34m,[0m [0mknn_features[0m [0;34m=[0m [0mvaeda[0m[0;34m([0m[0mXr[0m[0;34m,[0m [0msave_dir[0m[0;34m=[0m[0msave_path[0m[0;34m,[0m [0muse_old[0m[0;34m=[0m[0;32mTrue[0m[0;34m,[0m [0mpca_comp[0m[0;34m=[0m[0;36m30[0m[0;34m,[0m [0mclust_weight[0m[0;34m=[0m[0;36m20000[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     51[0m [0;34m[0m[0m
+[1;32m     52[0m                 [0mtrue[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0mconcatenate[0m[0;34m([0m[0;34m[[0m[0mtrue_keep[0m[0;34m,[0m [0mnp[0m[0;34m.[0m[0mfull[0m[0;34m([0m[0mlen[0m[0;34m([0m[0mpreds_on_P[0m[0;34m)[0m[0;34m,[0m[0;36m2[0m[0;34m)[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/scvae-dbl-btch/notebooks/vaeda.py[0m in [0;36mvaeda[0;34m(X, save_dir, gene_thresh, num_hvgs, pca_comp, quant, enc_sze, max_eps_vae, pat_vae, LR_vae, clust_weight, rate, N, k_mult, max_eps_PU, LR_PU, remove_homos, use_old, seeds)[0m
+[1;32m    132[0m     [0mvar[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0mvar[0m[0;34m([0m[0mX[0m[0;34m,[0m [0maxis[0m[0;34m=[0m[0;36m0[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    133[0m     [0mnp[0m[0;34m.[0m[0mrandom[0m[0;34m.[0m[0mseed[0m[0;34m([0m[0;36m3900362577[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 134[0;31m     [0mhvgs[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0margpartition[0m[0;34m([0m[0mvar[0m[0;34m,[0m [0;34m-[0m[0mnum_hvgs[0m[0;34m)[0m[0;34m[[0m[0;34m-[0m[0mnum_hvgs[0m[0;34m:[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    135[0m [0;34m[0m[0m
+[1;32m    136[0m     [0mstop[0m [0;34m=[0m [0mtime[0m[0;34m.[0m[0mperf_counter[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m<__array_function__ internals>[0m in [0;36margpartition[0;34m(*args, **kwargs)[0m
+
+[0;32m~/miniconda3/envs/newenv/lib/python3.8/site-packages/numpy/core/fromnumeric.py[0m in [0;36margpartition[0;34m(a, kth, axis, kind, order)[0m
+[1;32m    830[0m [0;34m[0m[0m
+[1;32m    831[0m     """
+[0;32m--> 832[0;31m     [0;32mreturn[0m [0m_wrapfunc[0m[0;34m([0m[0ma[0m[0;34m,[0m [0;34m'argpartition'[0m[0;34m,[0m [0mkth[0m[0;34m,[0m [0maxis[0m[0;34m=[0m[0maxis[0m[0;34m,[0m [0mkind[0m[0;34m=[0m[0mkind[0m[0;34m,[0m [0morder[0m[0;34m=[0m[0morder[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    833[0m [0;34m[0m[0m
+[1;32m    834[0m [0;34m[0m[0m
+
+[0;32m~/miniconda3/envs/newenv/lib/python3.8/site-packages/numpy/core/fromnumeric.py[0m in [0;36m_wrapfunc[0;34m(obj, method, *args, **kwds)[0m
+[1;32m     56[0m [0;34m[0m[0m
+[1;32m     57[0m     [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 58[0;31m         [0;32mreturn[0m [0mbound[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwds[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     59[0m     [0;32mexcept[0m [0mTypeError[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     60[0m         [0;31m# A TypeError occurs if the object does have such a method in its[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mValueError[0m: kth(=-19) out of bounds (1981)
+ValueError: kth(=-19) out of bounds (1981)
+
